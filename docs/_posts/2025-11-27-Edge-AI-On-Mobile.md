@@ -4,7 +4,7 @@ description: Leverage the latest SME2 (Scalable Matrix Extension 2) available on
 subjects:
 - ML
 - Performance and Architecture
-- Libraries
+- Mobile, Graphics, and Gaming
 - Edge AI
 requires-team:
 - No
@@ -45,23 +45,25 @@ full_description: |-
 
   ### Project Summary
 
-  Select a **mobile edge AI application** that benefits from large matrix operations, multi-modal fusion, or transformer-based processing enabled by SME2. Build and optimize a proof-of-concept application on a vivo X300 phone or other device supporting SME2.
+  Select a **mobile edge AI application** that benefits from large matrix operations, multi-modal fusion, or transformer-based processing accelerated by SME2, with real-time speech-to-speech translation, profanity filtering or filler-word removal, and on-device Small Language Models (SLMs) as key example use cases.
 
   Example project areas:  
-      - Real-time video semantic segmentation (e.g., background removal + AR compositing)  
-      - Live object detection + natural-language description (text summary of what the camera sees)  
-      - Multi-sensor fusion (camera + IMU + microphone) for gesture + voice recognition  
-      - On-device lightweight LLM or encoder-only transformer processing for mobile assistants  
+  - Real-time speech-to-speech translation
+  - On-device SLM for contextual understanding, rewriting, or assistant tasks
+  - Profanity detection and filtering (masking, rewriting, audio bleeping)
+  - Filler-word removal / speech clean-up (e.g., removing “um”, “uh”, false starts)
+  - Real-time video semantic segmentation (e.g., AR captions + background removal)
+  - Live object detection with natural-language description
+  - Multi-sensor fusion (camera + IMU + microphone) for gesture + voice interaction
 
-  Identify a model architecture that maps to wide matrix operations (e.g., ViT, MLP-Mixer, multi-branch CNN with large FC layers). Utilise a mobile-friendly framework (e.g., ExecuTorch, LiteRT, ONNX Runtime, MediaPipe) to leverage SME2 optimizations. Optimize quantization, memory layout, and verify that the large matrix multiplications get scheduled efficiently on the SME2-enabled CPU. Build a mobile app (Android) that executes the model and utilises it for a compelling use-case.
+  Identify a model architecture that maps to wide matrix operations (e.g., ViT, MLP-Mixer, multi-branch CNN with large FC layers). Utilise a mobile-friendly framework (e.g., ExecuTorch, LiteRT, ONNX Runtime, MediaPipe) to leverage SME2 optimizations. Optimize quantization, memory layout, and verify that the large matrix multiplications get scheduled efficiently on the SME2-enabled CPU. Build a mobile app (Android or iOS) that executes the model and utilises it for a compelling use-case.
 
-  Utilise the resources and learning paths below and create an exciting and challenging application. Optionally, you could also compare performance vs a reference phone without SME2.
-
-  ---
+  Utilise the resources and learning paths below and create an exciting and challenging application. As a bonus, you could compare performance vs a reference phone without SME2.
 
   ## Resources from Arm and our partners
 
   - Arm Developer: [Launchpad - Mobile AI](https://developer.arm.com/mobile-graphics-and-gaming/ai-mobile)
+  - Learning Path: [Profile ExecuTorch models with SME2 on Arm](https://learn.arm.com/learning-paths/cross-platform/sme-executorch-profiling/)
   - Learning Path: [Mobile AI/ML Performance Profiling](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/profiling-ml-on-arm/)
   - Learning Path: [Build an Android chat app with Llama, KleidiAI, ExecuTorch, and XNNPACK](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/build-llama3-chat-android-app-using-executorch-and-xnnpack/)
   - Learning Path: [Vision LLM Inference on Android with KleidiAI](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/vision-llm-inference-on-android-with-kleidiai-and-mnn/)
@@ -69,19 +71,19 @@ full_description: |-
   - Repository: [AI on Arm course](https://github.com/arm-university/AI-on-Arm)
   - Arm / Cambridge University edX course: [AI at the Edge on Arm (Mobile)](https://www.edx.org/learn/computer-science/arm-education-ai-at-the-edge-on-arm)
 
-  ---
-
   ## Support Level
 
   This project is designed to be self-serve but comes with opportunity of some community support from Arm Ambassadors, who are part of the Arm Developer program. If you are not already part of our program, [click here to join](https://www.arm.com/resources/developer-program?#register).
 
   ## Benefits 
 
-  Standout project contributions will result in digital badges for CV building, recognised by Arm Talent Acquisition. We are currently discussing with national agencies the potential for funding streams for Arm Developer Labs projects, which would flow to you, not us.
-
+  Standout project contributions to the community will earn digital badges. These badges can support CV or resumé building and demonstrate earned recognition.
 
   To receive the benefits, you must show us your project through our [online form](https://forms.office.com/e/VZnJQLeRhD). Please do not include any confidential information in your contribution. Additionally if you are affiliated with an academic institution, please ensure you have the right to share your material.
 
+  ## Example Reference Project
+
+  [This project, submitted to Arm Developer Labs and also created as part of the Arm AI Developer Challenge, is an example of Edge inference on mobile using the ExecuTorch runtime and XNNPACK](https://github.com/abhitorch81/PocketQSAR/) 
 
   ---
 ---
@@ -102,23 +104,25 @@ Other devices also support SME2, including both Apple and Android - [see the ful
 
 ### Project Summary
 
-Select a **mobile edge AI application** that benefits from large matrix operations, multi-modal fusion, or transformer-based processing enabled by SME2. Build and optimize a proof-of-concept application on a vivo X300 phone or other device supporting SME2.
+Select a **mobile edge AI application** that benefits from large matrix operations, multi-modal fusion, or transformer-based processing accelerated by SME2, with real-time speech-to-speech translation, profanity filtering or filler-word removal, and on-device Small Language Models (SLMs) as key example use cases.
 
 Example project areas:  
-    - Real-time video semantic segmentation (e.g., background removal + AR compositing)  
-    - Live object detection + natural-language description (text summary of what the camera sees)  
-    - Multi-sensor fusion (camera + IMU + microphone) for gesture + voice recognition  
-    - On-device lightweight LLM or encoder-only transformer processing for mobile assistants  
+- Real-time speech-to-speech translation
+- On-device SLM for contextual understanding, rewriting, or assistant tasks
+- Profanity detection and filtering (masking, rewriting, audio bleeping)
+- Filler-word removal / speech clean-up (e.g., removing “um”, “uh”, false starts)
+- Real-time video semantic segmentation (e.g., AR captions + background removal)
+- Live object detection with natural-language description
+- Multi-sensor fusion (camera + IMU + microphone) for gesture + voice interaction
 
-Identify a model architecture that maps to wide matrix operations (e.g., ViT, MLP-Mixer, multi-branch CNN with large FC layers). Utilise a mobile-friendly framework (e.g., ExecuTorch, LiteRT, ONNX Runtime, MediaPipe) to leverage SME2 optimizations. Optimize quantization, memory layout, and verify that the large matrix multiplications get scheduled efficiently on the SME2-enabled CPU. Build a mobile app (Android) that executes the model and utilises it for a compelling use-case.
+Identify a model architecture that maps to wide matrix operations (e.g., ViT, MLP-Mixer, multi-branch CNN with large FC layers). Utilise a mobile-friendly framework (e.g., ExecuTorch, LiteRT, ONNX Runtime, MediaPipe) to leverage SME2 optimizations. Optimize quantization, memory layout, and verify that the large matrix multiplications get scheduled efficiently on the SME2-enabled CPU. Build a mobile app (Android or iOS) that executes the model and utilises it for a compelling use-case.
 
-Utilise the resources and learning paths below and create an exciting and challenging application. Optionally, you could also compare performance vs a reference phone without SME2.
-
----
+Utilise the resources and learning paths below and create an exciting and challenging application. As a bonus, you could compare performance vs a reference phone without SME2.
 
 ## Resources from Arm and our partners
 
 - Arm Developer: [Launchpad - Mobile AI](https://developer.arm.com/mobile-graphics-and-gaming/ai-mobile)
+- Learning Path: [Profile ExecuTorch models with SME2 on Arm](https://learn.arm.com/learning-paths/cross-platform/sme-executorch-profiling/)
 - Learning Path: [Mobile AI/ML Performance Profiling](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/profiling-ml-on-arm/)
 - Learning Path: [Build an Android chat app with Llama, KleidiAI, ExecuTorch, and XNNPACK](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/build-llama3-chat-android-app-using-executorch-and-xnnpack/)
 - Learning Path: [Vision LLM Inference on Android with KleidiAI](https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/vision-llm-inference-on-android-with-kleidiai-and-mnn/)
@@ -126,18 +130,18 @@ Utilise the resources and learning paths below and create an exciting and challe
 - Repository: [AI on Arm course](https://github.com/arm-university/AI-on-Arm)
 - Arm / Cambridge University edX course: [AI at the Edge on Arm (Mobile)](https://www.edx.org/learn/computer-science/arm-education-ai-at-the-edge-on-arm)
 
----
-
 ## Support Level
 
 This project is designed to be self-serve but comes with opportunity of some community support from Arm Ambassadors, who are part of the Arm Developer program. If you are not already part of our program, [click here to join](https://www.arm.com/resources/developer-program?#register).
 
 ## Benefits 
 
-Standout project contributions will result in digital badges for CV building, recognised by Arm Talent Acquisition. We are currently discussing with national agencies the potential for funding streams for Arm Developer Labs projects, which would flow to you, not us.
-
+Standout project contributions to the community will earn digital badges. These badges can support CV or resumé building and demonstrate earned recognition.
 
 To receive the benefits, you must show us your project through our [online form](https://forms.office.com/e/VZnJQLeRhD). Please do not include any confidential information in your contribution. Additionally if you are affiliated with an academic institution, please ensure you have the right to share your material.
 
+## Example Reference Project
+
+[This project, submitted to Arm Developer Labs and also created as part of the Arm AI Developer Challenge, is an example of Edge inference on mobile using the ExecuTorch runtime and XNNPACK](https://github.com/abhitorch81/PocketQSAR/) 
 
 ---

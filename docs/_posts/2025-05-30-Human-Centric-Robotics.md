@@ -4,7 +4,6 @@ description: This team project will build and test an Arm-based urban service ro
 subjects:
 - ML
 - Embedded Linux
-- RTOS Fundamentals
 - Physical AI
 requires-team:
 - Yes
@@ -23,7 +22,7 @@ support-level:
 publication-date: 2025-05-30
 license:
 status:
-- Published
+- Hidden
 donation:
 layout: article
 sidebar:
