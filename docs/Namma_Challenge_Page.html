@@ -1,0 +1,203 @@
+---
+layout: page
+title: Namma Smart AI Apps Challenge
+show_title: false
+description: Namma Smart AI Apps Challenge 2026
+---
+
+{%- assign resolved_url = site.url -%}
+{%- if resolved_url contains '$PREVIEW_URL' -%}
+  {%- assign resolved_url = site.env.PREVIEW_URL -%}
+{%- endif -%}
+
+{%- if page.share_image -%}
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ resolved_url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:image" content="{{ resolved_url }}{{ site.baseurl }}/{{ page.share_image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ resolved_url }}{{ site.baseurl }}/{{ page.share_image }}">
+{%- endif -%}
+
+<div class="challenge-wrapper">
+  <header class="challenge-header">
+    <div class="ch-header-content">
+      <div class="ch-badge"><span class="ch-badge-dot"></span><span>Namma Smart AI Apps Challenge</span></div>
+      <h1>Namma Smart AI Apps Challenge</h1>
+      <p class="ch-tagline">AI-Native Smart Applications for Digital Karnataka</p>
+      <p>In collaboration with Arm, IIIT Bangalore &amp; NASSCOM*</p>
+      <div class="ch-header-meta">
+        <div class="ch-meta-pill"><span class="ch-meta-label">Duration</span><span class="ch-meta-value">August – November 2026</span></div>
+        <div class="ch-meta-pill"><span class="ch-meta-label">Team Size</span><span class="ch-meta-value">1–3 Members</span></div>
+        <div class="ch-meta-pill"><span class="ch-meta-label">Participants</span><span class="ch-meta-value">Students &amp; Working Professionals / Developers</span></div>
+        <div class="ch-meta-pill"><span class="ch-meta-label">Eligibility</span><span class="ch-meta-value">Indian Nationals</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="ch-section">
+      <h2>Program Overview</h2>
+      <p>The Namma Smart AI Apps Challenge is a national-level initiative jointly launched by Arm and IIIT Bangalore with support of NASSCOM, to build a skilled talent pipeline in on-device Edge AI app development.</p>
+      <p>Unlike prior student-only skilling initiatives, the program is open to both student developers (UG/PG) and working professionals, recognising that Edge AI application-development talent spans academia and industry.</p>
+      <p>Participants will build real-world applications with societal impact across healthcare, education, telemedicine, gaming, and application modernisation, with mentorship from Arm engineers and IIIT Bangalore faculty.</p>
+      <p>The program officially launches on 15 August 2026 and culminates in a live demo day and winners' announcement at Bangalore Tech Summit 2026 on 19 November 2026.</p>
+    </section>
+
+    <section class="ch-section">
+      <h2>Program Objectives</h2>
+      <ul>
+        <li>Build practical, industry-relevant skills in on-device AI and app development.</li>
+        <li>Create a joint academia–industry talent pipeline by inviting both students and working professionals into the challenge.</li>
+        <li>Translate technology into real, deployable applications addressing genuine societal problems.</li>
+        <li>Establish IIIT Bangalore as an academic anchor for Edge AI curriculum, mentorship, and lab infrastructure.</li>
+        <li>Build a structured mentorship pipeline connecting participants directly with Arm engineers and IIIT Bangalore faculty.</li>
+        <li>Encourage cross-pollination between academic experimentation and industry engineering discipline.</li>
+        <li>Strengthen collaboration between Arm, NASSCOM, and IIIT Bangalore.</li>
+      </ul>
+    </section>
+
+    <section class="ch-section">
+      <h2>Technology Theme</h2>
+      <h3>AI-Native Smart Applications for Digital Karnataka</h3>
+      <p>Artificial Intelligence is moving from the cloud to the edge. The challenge invites participants to develop intelligent, secure, responsive applications capable of operating efficiently on local devices.</p>
+      <ul><li>Windows on Arm</li><li>ONNX Runtime</li><li>Arm SME2 (Scalable Matrix Extension 2)</li><li>KleidiAI</li></ul>
+      <p>The goal is high-performance, privacy-preserving applications with fast on-device inference, improved power efficiency, responsiveness, and reduced dependence on continuous connectivity.</p>
+    </section>
+
+    <section class="ch-section">
+      <h2>What Makes This Challenge Different</h2>
+      <p>This is an Edge AI challenge rather than a traditional cloud-only hackathon. Participants build AI-native on-device applications designed for privacy, low latency, responsiveness, offline capability, and power efficiency.</p>
+      <p>Real-world societal problem statements are paired with mentorship from Arm and academic guidance from IIIT Bangalore. Students and working professionals gain hands-on experience in building, optimisation, benchmarking, and deployment.</p>
+    </section>
+
+    <section class="ch-section">
+      <h2>Program Flow &amp; Timeline</h2>
+      <table class="ch-table"><thead><tr><th>Stage</th><th>Date</th><th>Activity</th></tr></thead><tbody>
+        <tr><td>Launch</td><td>15 August 2026</td><td>Portal live and promotion via official handles</td></tr>
+        <tr><td>Registration</td><td>15 August – 15 September 2026</td><td>Team formation and selection of problem statements</td></tr>
+        <tr><td>Phase 1 — Ideation</td><td>1 September – 30 September 2026</td><td>Mentoring by experts, project baseline development, project report submission and demo video</td></tr>
+        <tr><td>Phase 1 Evaluation &amp; Shortlist</td><td>1 October – 10 October 2026</td><td>Assessment of submitted projects by experts and shortlisting</td></tr>
+        <tr><td>Phase 2 — PoC Development</td><td>11 October – 30 October 2026</td><td>Full application development for shortlisted teams</td></tr>
+        <tr><td>Phase 2 Evaluation</td><td>1 November – 15 November 2026</td><td>Teams showcase a live virtual demo of their projects</td></tr>
+        <tr><td>Winners' Announcement</td><td>19 November 2026</td><td>Cash prize distribution at Bangalore Tech Summit 2026</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="ch-section">
+      <h2>Phase 1 — Open Qualifying Round</h2>
+      <p>All registered participants submit a project report with:</p>
+      <div class="phase-deliverables">
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Problem Statement Alignment</div><div class="phase-deliverable-text">Clear articulation of the chosen problem and proposed solution approach.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Technical Architecture</div><div class="phase-deliverable-text">System design, model selection and Arm backend selection.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Working Code Repository</div><div class="phase-deliverable-text">A public or shared GitHub repository with runnable code, README, setup instructions and at least a basic working prototype.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Performance Baseline</div><div class="phase-deliverable-text">Initial benchmarking results or projections for on-device latency, memory footprint and accuracy.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Demo Video</div><div class="phase-deliverable-text">A 3–5-minute video demonstrating the working prototype.</div></div>
+      </div>
+      <div class="phase-note">An expert panel evaluates Phase 1 submissions and shortlists the top teams per problem statement for Phase 2.</div>
+    </section>
+
+    <section class="ch-section">
+      <h2>Phase 2 — App Development Round (Invitation Only)</h2>
+      <p>Shortlisted teams receive hardware support, dedicated mentorship, and cloud compute credits to build a fully functional app.</p>
+      <div class="phase-deliverables">
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Fully Deployed App</div><div class="phase-deliverable-text">End-to-end on-device inference on target hardware, demonstrating all claimed use cases.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Optimization Report</div><div class="phase-deliverable-text">Quantitative benchmarking across latency, memory and accuracy, with comparison of at least two backend/quantization configurations.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Updated Codebase</div><div class="phase-deliverable-text">Production-quality code with documentation suitable for handover.</div></div>
+        <div class="phase-deliverable"><div class="phase-deliverable-title">Live Virtual Demo</div><div class="phase-deliverable-text">Presented to a jury panel with a Q&amp;A session.</div></div>
+      </div>
+    </section>
+
+    <section class="ch-section">
+      <h2>Project Problem Statements</h2>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">1. AI Consultation Preparation Assistant for Patients</span></summary><div class="ch-acc-body">
+        <p><strong>Domain:</strong> Healthcare<br><strong>Applicable for:</strong> Students</p>
+        <p>In Karnataka's Tier-2 and Tier-3 towns and rural taluks, patients accessing online consultations under state public health initiatives such as Arogya Karnataka through Centre for Applied AI for Tech Solutions (CATS) often struggle to organise their symptoms, medical history and questions before the call, especially where the consultation is conducted in English while the patient is more comfortable in Kannada.</p>
+        <p>Build a desktop application that accepts a patient's symptoms, health notes, prescriptions and medical reports and generates:</p>
+        <ul><li>a patient-friendly summary</li><li>relevant questions to ask the doctor</li><li>a consultation checklist</li></ul>
+        <p>Kannada-language support must be treated as a core feature.</p>
+        <p>The application must run entirely on-device to protect sensitive health data and should be achievable by a student team using a small language model or ONNX-based text summarization pipeline.</p>
+      </div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">2. Personalized Study Guide, Planner and Knowledge Copilot for Students</span></summary><div class="ch-acc-body">
+        <p><strong>Domain:</strong> EdTech<br><strong>Applicable for:</strong> Students</p>
+        <p>Students across Karnataka often have study material spread across notes, PDFs, lecture summaries and slides with no simple way to search it, test understanding or plan revision.</p>
+        <p>Build a desktop application that ingests a student's study material and allows the student to:</p>
+        <ul><li>ask questions</li><li>generate flashcards</li><li>summarize topics</li><li>produce a personalized revision plan</li></ul>
+        <p>The scope should remain lightweight and focus on a clean, usable local AI workflow rather than complex system integrations.</p>
+      </div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">3. Telemedicine Consultation Copilot with Local AI Summarization and Clinical Workflow Support</span></summary><div class="ch-acc-body">
+        <p><strong>Domain:</strong> Telemedicine<br><strong>Applicable for:</strong> Working Professionals / Developers</p>
+        <p>Karnataka's public health system includes online consultations connecting patients in rural districts to doctors at taluk and district hospitals.</p>
+        <p>Clinicians spend significant time documenting symptoms, medications, investigations and follow-up actions.</p>
+        <p>Develop a desktop application that:</p>
+        <ul><li>captures or imports consultation transcripts</li><li>extracts relevant clinical details</li><li>generates a structured clinician-facing note</li><li>generates a separate patient-friendly summary</li></ul>
+        <p>Kannada must be supported as a first-class language.</p>
+        <p>Advanced teams may extend the solution with:</p>
+        <ul><li>additional regional-language support</li><li>retrieval from medical reference documents</li><li>structured follow-up planning</li></ul>
+      </div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">4. Real-Time AI Gaming Coach and Multimedia Highlights Studio</span></summary><div class="ch-acc-body">
+        <p><strong>Domain:</strong> Gaming<br><strong>Applicable for:</strong> Working Professionals / Developers</p>
+        <p>Build a desktop application that analyses recorded gameplay clips or live screen/video input and:</p>
+        <ul><li>detects key events</li><li>tags important moments</li><li>generates coaching insights</li><li>generates highlight summaries</li><li>combines computer vision with audio/text metadata</li><li>presents findings through a local assistant interface</li><li>surfaces mistakes, achievements and strategy recommendations</li></ul>
+        <p>This problem targets experienced developers because it requires real-time video processing, multi-model orchestration and a performance-aware desktop UX.</p>
+      </div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">5. Desktop Application Migration &amp; Optimization with Performance Benchmarking Suite</span></summary><div class="ch-acc-body">
+        <p><strong>Domain:</strong> App Migration<br><strong>Applicable for:</strong> Students &amp; Working Professionals / Developers</p>
+        <p>Select an existing open-source or self-built x86 Windows desktop application and migrate it to run natively on Windows on Arm (Arm64).</p>
+        <p>Address real migration issues where relevant, including:</p>
+        <ul><li>unavailable or x86-only dependencies</li><li>native library recompilation</li><li>driver or SDK incompatibilities</li><li>installer or packaging changes</li></ul>
+        <p>The deliverable must include both:</p><ol><li>a working native Arm64 port</li><li>a rigorous and repeatable benchmarking suite</li></ol>
+        <p>The benchmarking suite must compare x86-emulated and native Arm64 versions across:</p><ul><li>performance</li><li>power consumption</li><li>memory utilisation</li></ul>
+        <p>Student teams may choose a smaller, self-contained application such as a utility, lightweight productivity app or sample ONNX/AI inference app.</p>
+        <p>Professional teams are encouraged to attempt a larger, dependency-heavy or AI-inference-capable application demonstrating production complexity.</p>
+      </div></details>
+    </section>
+
+    <section class="ch-section">
+      <h2>Eligibility Criteria</h2>
+      <p>The challenge is open to Indian nationals in two categories.</p>
+      <table class="ch-table"><thead><tr><th>Category</th><th>Who qualifies</th><th>Team Lead Requirement</th></tr></thead><tbody>
+        <tr><td>Students</td><td>UG or PG students enrolled in a regular full-time course at a recognized Indian HEI with a background in AI/ML, digital systems, or software.</td><td>Team Leader must be an enrolled student. Faculty Mentor required.</td></tr>
+        <tr><td>Working Professionals / Developers</td><td>Individuals currently employed in industry, startups, or independent developers with demonstrable technical experience in AI/ML or embedded systems.</td><td>Team Leader is a professional. Faculty Mentor not required.</td></tr>
+      </tbody></table>
+      <h3>Team Rules</h3><ul>
+        <li>Team size: 1 to 3 members per team.</li><li>Students: All members must be from the same institution and campus; they may span different branches and semesters.</li><li>Faculty Mentor: Each student team should have a Faculty Mentor.</li><li>Professional teams: Members may be from different organizations.</li><li>Problem statement: Each team selects one problem statement.</li><li>One change of team composition or problem statement is permitted within 15 days of registration.</li>
+      </ul>
+    </section>
+
+    <section class="ch-section">
+      <h2>Problem Statement Compliance Checklist</h2>
+      <div style="overflow-x: auto;"><table class="ch-table"><thead><tr><th>PS #</th><th>Domain</th><th>Participant Category</th><th>Free Azure Account</th><th>WoA Device</th><th>SVE2</th><th>SME2</th><th>Inference Acceleration</th><th>CPU Optimization</th><th>KleidiAI</th></tr></thead><tbody>
+        <tr><td>1</td><td>Healthcare</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
+        <tr><td>2</td><td>EdTech</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
+        <tr><td>3</td><td>Telemedicine</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
+        <tr><td>4</td><td>Gaming</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
+        <tr><td>5</td><td>App Migration</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
+        <tr><td>5</td><td>App Migration</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
+      </tbody></table></div>
+      <div class="ch-note">Challenge 5 is open to both Students and Working Professionals / Developers. Each participant category is held to its respective track's compliance requirements.</div>
+    </section>
+
+    <section class="ch-section"><h2>Recognition &amp; Rewards</h2><ul>
+      <li>Participation Certificates for all participants submitting a working project.</li><li>Arm-branded merchandise for the Top 40 finalists.</li><li>Cash awards for winning teams across each of the five problem statements.</li><li>A few of the top winning projects may be featured at national-level industry conferences.</li>
+    </ul></section>
+
+    <section class="ch-section"><h2>Registration</h2><div class="ch-note">Registration details will be added once confirmed.</div></section>
+
+    <section class="ch-section"><h2>Frequently Asked Questions</h2>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">1. Who can participate?</span></summary><div class="ch-acc-body"><p>Indian nationals in the Student or Working Professional / Developer categories described in the eligibility section.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">2. How many people can be in a team?</span></summary><div class="ch-acc-body"><p>1 to 3 members.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">3. Can students from different institutions form a team?</span></summary><div class="ch-acc-body"><p>No. Student team members must be from the same institution and campus, although they may come from different branches and semesters.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">4. Do student teams need a Faculty Mentor?</span></summary><div class="ch-acc-body"><p>Yes. Each student team should have a Faculty Mentor.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">5. Can professionals from different organizations form a team?</span></summary><div class="ch-acc-body"><p>Yes.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">6. Which challenges can students enter?</span></summary><div class="ch-acc-body"><p>Challenges 1, 2 and 5.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">7. Which challenges can professionals/developers enter?</span></summary><div class="ch-acc-body"><p>Challenges 3, 4 and 5.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">8. Can a team change its composition or problem statement?</span></summary><div class="ch-acc-body"><p>One change of team composition or problem statement is permitted within 15 days of registration.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">9. What happens in Phase 1?</span></summary><div class="ch-acc-body"><p>Participants submit problem statement alignment, technical architecture, a working code repository, a performance baseline and a 3–5-minute demo video.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">10. What support do shortlisted teams receive?</span></summary><div class="ch-acc-body"><p>Hardware support, dedicated mentorship and cloud compute credits.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">11. When are winners announced?</span></summary><div class="ch-acc-body"><p>19 November 2026 at Bangalore Tech Summit 2026.</p></div></details>
+      <details class="ch-accordion"><summary><span class="ch-acc-title">12. What rewards are available?</span></summary><div class="ch-acc-body"><p>Participation certificates for participants submitting a working project, Arm-branded merchandise for the Top 40 finalists, cash awards for winning teams across all five problem statements, and potential national-level conference exposure for some top winning projects. Exact cash award amounts are not currently specified.</p></div></details>
+    </section>
+  </main>
+</div>
