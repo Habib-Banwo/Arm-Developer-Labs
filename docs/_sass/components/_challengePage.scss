@@ -171,6 +171,40 @@
   color: var(--text-dark);
 }
 
+/* Phase deliverables */
+.phase-deliverables {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.phase-deliverable {
+  padding: 14px 16px;
+  background: var(--purple-lighter);
+  border: 1px solid var(--purple-border);
+  border-radius: 10px;
+}
+
+.phase-deliverable-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.phase-deliverable-text {
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.phase-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--purple-light);
+  border-left: 4px solid var(--purple-dark);
+  border-radius: 8px;
+  color: var(--text-dark);
+}
+
 /* Timeline Table */
 .ch-table {
   width: 100%;
