@@ -15,6 +15,10 @@
   --text-muted: #5e5771;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Container */
 .challenge-wrapper {
   max-width: 1100px;
@@ -351,6 +355,51 @@
   padding: 6px 8px;
 }
 
+/* Register CTA */
+.ch-register-cta {
+  display: flex;
+  justify-content: center;
+  margin: -12px 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.ch-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  padding: 11px 28px;
+
+  background: var(--purple-dark);
+  color: #ffffff !important;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+  text-decoration: none !important;
+
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.ch-register-button:hover {
+  background: var(--purple);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+
+/* Registration anchor */
+#registration {
+  scroll-margin-top: 90px;
+}
+
+
 /* Floating Button */
 .ch-floating-register {
   position: fixed;
@@ -372,6 +421,137 @@
   background: var(--purple-dark);
   color: #111111;
   transform: translateX(-50%) translateY(-3px);
+}
+
+.registration-form-wrapper {
+  max-width: 760px;
+  margin: 24px auto 0;
+  padding: 28px;
+
+  background: var(--purple-lighter);
+  border: 1px solid var(--purple-border);
+  border-radius: 12px;
+}
+
+
+/* Embedded registration form */
+.registration-form-wrapper .mktoForm {
+  width: 100% !important;
+  max-width: 100% !important;
+  font-family: inherit !important;
+}
+
+
+/* Individual form rows */
+.registration-form-wrapper .mktoFormRow {
+  margin-bottom: 14px;
+}
+
+
+/* Labels */
+.registration-form-wrapper .mktoLabel {
+  color: #2b2b2b !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+
+
+/* Inputs, dropdowns and text areas */
+.registration-form-wrapper input[type="text"],
+.registration-form-wrapper input[type="email"],
+.registration-form-wrapper input[type="tel"],
+.registration-form-wrapper select,
+.registration-form-wrapper textarea {
+  width: 100% !important;
+  max-width: 420px;
+
+  padding: 10px 12px !important;
+
+  border: 1px solid #c9c3d6 !important;
+  border-radius: 6px !important;
+
+  background: #fff !important;
+
+  font: inherit !important;
+}
+
+
+/* Slightly larger text areas */
+.registration-form-wrapper textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+
+/* Focus states */
+.registration-form-wrapper input:focus,
+.registration-form-wrapper select:focus,
+.registration-form-wrapper textarea:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.25) !important;
+  border-color: #7c3aed !important;
+}
+
+
+/* Submit button */
+.registration-form-wrapper .mktoButton {
+  width: 100% !important;
+  max-width: 220px;
+  min-width: 180px;
+
+  padding: 9px 24px 13px !important;
+
+  background: var(--purple-dark) !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  cursor: pointer;
+}
+
+.registration-form-wrapper .mktoButtonRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.registration-form-wrapper .mktoButtonWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 0 !important;
+}
+
+
+
+/* Keep long privacy text readable */
+.registration-form-wrapper .mktoForm .mktoHtmlText {
+  line-height: 1.55 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+  .registration-form-wrapper {
+    padding: 18px;
+  }
+
+  .registration-form-wrapper input[type="text"],
+  .registration-form-wrapper input[type="email"],
+  .registration-form-wrapper input[type="tel"],
+  .registration-form-wrapper select,
+  .registration-form-wrapper textarea {
+    max-width: 100%;
+  }
+
+  .registration-form-wrapper .mktoButton {
+    width: 100%;
+    position: relative;
+    top: 0;
+    line-height: 1 !important;
+  }
 }
 
 /* ============= */
