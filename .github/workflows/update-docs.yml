@@ -2,11 +2,11 @@ name: Update Docs
 
 on:
   push:
-    branches: [main]       # rebuild when main is updated
-  pull_request:            # rebuild for every PR targeting main
+    branches: [main]
+  pull_request:
 
 permissions:
-  contents: write          # allow the job to push commits back
+  contents: read
 
 jobs:
   update-docs:
@@ -14,21 +14,19 @@ jobs:
 
     steps:
     # -------------------------------------------------
-    # 1 – checkout full history so we can re-base/push
+    # 1 - checkout repository
     # -------------------------------------------------
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 
 
     # -------------------------------------------------
-    # 2 – Python toolchain
+    # 2 - Python toolchain
     # -------------------------------------------------
     - uses: actions/setup-python@v5
       with:
         python-version: "3.12"
 
     # -------------------------------------------------
-    # 3 – build docs & run tests
+    # 3 - build docs and run tests
     # -------------------------------------------------
     - name: Build docs and run tests
       run: |
@@ -42,40 +40,27 @@ jobs:
         cd ..
 
     # -------------------------------------------------
-    # 4a - PRs: verify generated docs are committed
+    # 4 - verify generated docs are committed
     # -------------------------------------------------
     - name: Check regenerated docs are up to date
-      if: github.event_name == 'pull_request'
       run: |
         git add -A
+
         if ! git diff --cached --quiet; then
           echo "Generated documentation is out of date."
-          echo "Run the documentation generation scripts locally and commit the resulting changes."
           echo
+          echo "Run the documentation generation scripts locally:"
+          echo
+          echo "  cd scripts"
+          echo "  source .venv/bin/activate"
+          echo "  python update_docs.py"
+          echo "  python update_navigation.py"
+          echo
+          echo "Then commit the resulting changes and push them."
+          echo
+          echo "Files changed by documentation generation:"
           git diff --cached --stat
           exit 1
         fi
+
         echo "Generated documentation is up to date."
-
-    # -------------------------------------------------
-    # 4b - main: commit and push regenerated docs
-    # -------------------------------------------------
-    - name: Commit and push regenerated docs
-      if: github.event_name == 'push'
-      run: |
-        set -e
-        git config --global user.name "ci-bot"
-        git config --global user.email "ci-bot@users.noreply.github.com"
-
-        git add -A
-        if git diff --cached --quiet; then
-          echo "Nothing to commit - skipping push"
-          exit 0
-        fi
-
-        git commit -m "docs: auto-update"
-
-        git fetch origin main
-        git rebase --strategy-option=ours origin/main
-
-        git push origin HEAD:main
