@@ -45,6 +45,8 @@ jobs:
     - name: Check regenerated docs are up to date
       run: |
         git add -A
+        git restore --staged docs/_data/navigation.yml
+        git restore docs/_data/navigation.yml
 
         if ! git diff --cached --quiet; then
           echo "Generated documentation is out of date."
