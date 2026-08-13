@@ -42,30 +42,40 @@ jobs:
         cd ..
 
     # -------------------------------------------------
-    # 4 – commit + push back to the right branch
+    # 4a - PRs: verify generated docs are committed
+    # -------------------------------------------------
+    - name: Check regenerated docs are up to date
+      if: github.event_name == 'pull_request'
+      run: |
+        git add -A
+        if ! git diff --cached --quiet; then
+          echo "Generated documentation is out of date."
+          echo "Run the documentation generation scripts locally and commit the resulting changes."
+          echo
+          git diff --cached --stat
+          exit 1
+        fi
+        echo "Generated documentation is up to date."
+
+    # -------------------------------------------------
+    # 4b - main: commit and push regenerated docs
     # -------------------------------------------------
     - name: Commit and push regenerated docs
-      env:
-        # For PRs GitHub sets GITHUB_HEAD_REF (e.g. "test");
-        # on push events it is empty, so we default to "main".
-        TARGET_BRANCH: ${{ github.head_ref || 'main' }}
+      if: github.event_name == 'push'
       run: |
         set -e
-        git config --global user.name  "ci-bot"
+        git config --global user.name "ci-bot"
         git config --global user.email "ci-bot@users.noreply.github.com"
 
-        # stage any changes produced by the scripts
         git add -A
         if git diff --cached --quiet; then
-          echo "Nothing to commit – skipping push"
+          echo "Nothing to commit - skipping push"
           exit 0
         fi
+
         git commit -m "docs: auto-update"
 
-        # make sure we’re rebasing onto the latest tip
-        git fetch origin "$TARGET_BRANCH"
-        # keep OUR regenerated version whenever a conflict happens
-        git rebase --strategy-option=ours origin/"$TARGET_BRANCH"  # :contentReference[oaicite:0]{index=0}
+        git fetch origin main
+        git rebase --strategy-option=ours origin/main
 
-        # push back to the same branch (main or PR source)
-        git push origin HEAD:"$TARGET_BRANCH"                     # :contentReference[oaicite:1]{index=1}
+        git push origin HEAD:main
