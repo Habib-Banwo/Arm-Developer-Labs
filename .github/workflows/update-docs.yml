@@ -2,11 +2,11 @@ name: Update Docs
 
 on:
   push:
-    branches: [main]       # rebuild when main is updated
-  pull_request:            # rebuild for every PR targeting main
+    branches: [main]
+  pull_request:
 
 permissions:
-  contents: write          # allow the job to push commits back
+  contents: read
 
 jobs:
   update-docs:
@@ -14,21 +14,19 @@ jobs:
 
     steps:
     # -------------------------------------------------
-    # 1 – checkout full history so we can re-base/push
+    # 1 - checkout repository
     # -------------------------------------------------
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 
 
     # -------------------------------------------------
-    # 2 – Python toolchain
+    # 2 - Python toolchain
     # -------------------------------------------------
     - uses: actions/setup-python@v5
       with:
         python-version: "3.12"
 
     # -------------------------------------------------
-    # 3 – build docs & run tests
+    # 3 - build docs and run tests
     # -------------------------------------------------
     - name: Build docs and run tests
       run: |
@@ -42,30 +40,29 @@ jobs:
         cd ..
 
     # -------------------------------------------------
-    # 4 – commit + push back to the right branch
+    # 4 - verify generated docs are committed
     # -------------------------------------------------
-    - name: Commit and push regenerated docs
-      env:
-        # For PRs GitHub sets GITHUB_HEAD_REF (e.g. "test");
-        # on push events it is empty, so we default to "main".
-        TARGET_BRANCH: ${{ github.head_ref || 'main' }}
+    - name: Check regenerated docs are up to date
       run: |
-        set -e
-        git config --global user.name  "ci-bot"
-        git config --global user.email "ci-bot@users.noreply.github.com"
-
-        # stage any changes produced by the scripts
         git add -A
-        if git diff --cached --quiet; then
-          echo "Nothing to commit – skipping push"
-          exit 0
+        git restore --staged docs/_data/navigation.yml
+        git restore docs/_data/navigation.yml
+
+        if ! git diff --cached --quiet; then
+          echo "Generated documentation is out of date."
+          echo
+          echo "Run the documentation generation scripts locally:"
+          echo
+          echo "  cd scripts"
+          echo "  source .venv/bin/activate"
+          echo "  python update_docs.py"
+          echo "  python update_navigation.py"
+          echo
+          echo "Then commit the resulting changes and push them."
+          echo
+          echo "Files changed by documentation generation:"
+          git diff --cached --stat
+          exit 1
         fi
-        git commit -m "docs: auto-update"
 
-        # make sure we’re rebasing onto the latest tip
-        git fetch origin "$TARGET_BRANCH"
-        # keep OUR regenerated version whenever a conflict happens
-        git rebase --strategy-option=ours origin/"$TARGET_BRANCH"  # :contentReference[oaicite:0]{index=0}
-
-        # push back to the same branch (main or PR source)
-        git push origin HEAD:"$TARGET_BRANCH"                     # :contentReference[oaicite:1]{index=1}
+        echo "Generated documentation is up to date."
