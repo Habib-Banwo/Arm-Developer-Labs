@@ -20,7 +20,7 @@ description: Namma Smart AI Apps Challenge 2026
 <meta name="twitter:image" content="{{ resolved_url }}{{ site.baseurl }}/{{ page.share_image }}">
 {%- endif -%}
 
-<div class="challenge-wrapper">
+<div class="challenge-wrapper namma-challenge">
   <header class="challenge-header">
     <div class="ch-header-content">
       <div class="ch-badge"><span class="ch-badge-dot"></span><span>Namma Smart AI Apps Challenge</span></div>
@@ -43,7 +43,7 @@ description: Namma Smart AI Apps Challenge 2026
 </div>
 
   <main>
-    <section class="ch-section">
+    <section class="ch-section ch-section--featured">
       <h2>Program Overview</h2>
       <p>The Namma Smart AI Apps Challenge is a national-level initiative jointly launched by Arm and IIIT Bangalore with support of NASSCOM, to build a skilled talent pipeline in on-device Edge AI app development.</p>
       <p>Unlike prior student-only skilling initiatives, the program is open to both student developers (UG/PG) and working professionals, recognising that Edge AI application-development talent spans academia and industry.</p>
@@ -80,7 +80,7 @@ description: Namma Smart AI Apps Challenge 2026
 
     <section class="ch-section">
       <h2>Program Flow &amp; Timeline</h2>
-      <table class="ch-table"><thead><tr><th>Stage</th><th>Date</th><th>Activity</th></tr></thead><tbody>
+      <table class="ch-table ch-timeline"><thead><tr><th>Stage</th><th>Date</th><th>Activity</th></tr></thead><tbody>
         <tr><td>Launch</td><td>15 August 2026</td><td>Portal live and promotion via official handles</td></tr>
         <tr><td>Registration</td><td>15 August – 15 September 2026</td><td>Team formation and selection of problem statements</td></tr>
         <tr><td>Phase 1 — Ideation</td><td>1 September – 30 September 2026</td><td>Mentoring by experts, project baseline development, project report submission and demo video</td></tr>
@@ -91,7 +91,7 @@ description: Namma Smart AI Apps Challenge 2026
       </tbody></table>
     </section>
 
-    <section class="ch-section">
+    <section class="ch-section phase-one">
       <h2>Phase 1 — Open Qualifying Round</h2>
       <p>All registered participants submit a project report with:</p>
       <div class="phase-deliverables">
@@ -104,7 +104,7 @@ description: Namma Smart AI Apps Challenge 2026
       <div class="phase-note">An expert panel evaluates Phase 1 submissions and shortlists the top teams per problem statement for Phase 2.</div>
     </section>
 
-    <section class="ch-section">
+    <section class="ch-section phase-two">
       <h2>Phase 2 — App Development Round (Invitation Only)</h2>
       <p>Shortlisted teams receive hardware support, dedicated mentorship, and cloud compute credits to build a fully functional app.</p>
       <div class="phase-deliverables">
@@ -115,9 +115,9 @@ description: Namma Smart AI Apps Challenge 2026
       </div>
     </section>
 
-    <section class="ch-section">
+    <section class="ch-section ch-problem-statements">
       <h2>Project Problem Statements</h2>
-      <details class="ch-accordion"><summary><span class="ch-acc-title">1. AI Consultation Preparation Assistant for Patients</span></summary><div class="ch-acc-body">
+      <details class="ch-accordion"><summary><span class="ch-acc-title">1. AI Consultation Preparation Assistant for Patients</span><span class="ch-acc-domain">Domain: Healthcare</span></summary><div class="ch-acc-body">
         <p><strong>Domain:</strong> Healthcare<br><strong>Applicable for:</strong> Students</p>
         <p>In Karnataka's Tier-2 and Tier-3 towns and rural taluks, patients accessing online consultations under state public health initiatives such as Arogya Karnataka through Centre for Applied AI for Tech Solutions (CATS) often struggle to organise their symptoms, medical history and questions before the call, especially where the consultation is conducted in English while the patient is more comfortable in Kannada.</p>
         <p>Build a desktop application that accepts a patient's symptoms, health notes, prescriptions and medical reports and generates:</p>
@@ -125,14 +125,14 @@ description: Namma Smart AI Apps Challenge 2026
         <p>Kannada-language support must be treated as a core feature.</p>
         <p>The application must run entirely on-device to protect sensitive health data and should be achievable by a student team using a small language model or ONNX-based text summarization pipeline.</p>
       </div></details>
-      <details class="ch-accordion"><summary><span class="ch-acc-title">2. Personalized Study Guide, Planner and Knowledge Copilot for Students</span></summary><div class="ch-acc-body">
+      <details class="ch-accordion"><summary><span class="ch-acc-title">2. Personalized Study Guide, Planner and Knowledge Copilot for Students</span><span class="ch-acc-domain">Domain: EdTech</span></summary><div class="ch-acc-body">
         <p><strong>Domain:</strong> EdTech<br><strong>Applicable for:</strong> Students</p>
         <p>Students across Karnataka often have study material spread across notes, PDFs, lecture summaries and slides with no simple way to search it, test understanding or plan revision.</p>
         <p>Build a desktop application that ingests a student's study material and allows the student to:</p>
         <ul><li>ask questions</li><li>generate flashcards</li><li>summarize topics</li><li>produce a personalized revision plan</li></ul>
         <p>The scope should remain lightweight and focus on a clean, usable local AI workflow rather than complex system integrations.</p>
       </div></details>
-      <details class="ch-accordion"><summary><span class="ch-acc-title">3. Telemedicine Consultation Copilot with Local AI Summarization and Clinical Workflow Support</span></summary><div class="ch-acc-body">
+      <details class="ch-accordion"><summary><span class="ch-acc-title">3. Telemedicine Consultation Copilot with Local AI Summarization and Clinical Workflow Support</span><span class="ch-acc-domain">Domain: Telemedicine</span></summary><div class="ch-acc-body">
         <p><strong>Domain:</strong> Telemedicine<br><strong>Applicable for:</strong> Working Professionals / Developers</p>
         <p>Karnataka's public health system includes online consultations connecting patients in rural districts to doctors at taluk and district hospitals.</p>
         <p>Clinicians spend significant time documenting symptoms, medications, investigations and follow-up actions.</p>
@@ -142,13 +142,13 @@ description: Namma Smart AI Apps Challenge 2026
         <p>Advanced teams may extend the solution with:</p>
         <ul><li>additional regional-language support</li><li>retrieval from medical reference documents</li><li>structured follow-up planning</li></ul>
       </div></details>
-      <details class="ch-accordion"><summary><span class="ch-acc-title">4. Real-Time AI Gaming Coach and Multimedia Highlights Studio</span></summary><div class="ch-acc-body">
+      <details class="ch-accordion"><summary><span class="ch-acc-title">4. Real-Time AI Gaming Coach and Multimedia Highlights Studio</span><span class="ch-acc-domain">Domain: Gaming</span></summary><div class="ch-acc-body">
         <p><strong>Domain:</strong> Gaming<br><strong>Applicable for:</strong> Working Professionals / Developers</p>
         <p>Build a desktop application that analyses recorded gameplay clips or live screen/video input and:</p>
         <ul><li>detects key events</li><li>tags important moments</li><li>generates coaching insights</li><li>generates highlight summaries</li><li>combines computer vision with audio/text metadata</li><li>presents findings through a local assistant interface</li><li>surfaces mistakes, achievements and strategy recommendations</li></ul>
         <p>This problem targets experienced developers because it requires real-time video processing, multi-model orchestration and a performance-aware desktop UX.</p>
       </div></details>
-      <details class="ch-accordion"><summary><span class="ch-acc-title">5. Desktop Application Migration &amp; Optimization with Performance Benchmarking Suite</span></summary><div class="ch-acc-body">
+      <details class="ch-accordion"><summary><span class="ch-acc-title">5. Desktop Application Migration &amp; Optimization with Performance Benchmarking Suite</span><span class="ch-acc-domain">Domain: App Migration</span></summary><div class="ch-acc-body">
         <p><strong>Domain:</strong> App Migration<br><strong>Applicable for:</strong> Students &amp; Working Professionals / Developers</p>
         <p>Select an existing open-source or self-built x86 Windows desktop application and migrate it to run natively on Windows on Arm (Arm64).</p>
         <p>Address real migration issues where relevant, including:</p>
@@ -174,22 +174,22 @@ description: Namma Smart AI Apps Challenge 2026
 
     <section class="ch-section">
       <h2>Problem Statement Compliance Checklist</h2>
-      <div style="overflow-x: auto;"><table class="ch-table"><thead><tr><th>PS #</th><th>Domain</th><th>Participant Category</th><th>Free Azure Account</th><th>WoA Device</th><th>SVE2</th><th>SME2</th><th>Inference Acceleration</th><th>CPU Optimization</th><th>KleidiAI</th></tr></thead><tbody>
-        <tr><td>1</td><td>Healthcare</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
-        <tr><td>2</td><td>EdTech</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
-        <tr><td>3</td><td>Telemedicine</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
-        <tr><td>4</td><td>Gaming</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
-        <tr><td>5</td><td>App Migration</td><td>Students</td><td>Mandatory</td><td>Optional / Recommended</td><td>Mandatory</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td><td>Optional / Recommended</td></tr>
-        <tr><td>5</td><td>App Migration</td><td>Working Professionals / Developers</td><td>Not Required</td><td>Mandatory</td><td>Not Required</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td><td>Mandatory</td></tr>
+      <div style="overflow-x: auto;"><table class="ch-table ch-compliance-table"><thead><tr><th>PS #</th><th>Domain</th><th>Participant Category</th><th>Free Azure Account</th><th>WoA Device</th><th>SVE2</th><th>SME2</th><th>Inference Acceleration</th><th>CPU Optimization</th><th>KleidiAI</th></tr></thead><tbody>
+        <tr><td>1</td><td>Healthcare</td><td>Students</td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td></tr>
+        <tr><td>2</td><td>EdTech</td><td>Students</td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td></tr>
+        <tr><td>3</td><td>Telemedicine</td><td>Working Professionals / Developers</td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td></tr>
+        <tr><td>4</td><td>Gaming</td><td>Working Professionals / Developers</td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td></tr>
+        <tr><td>5</td><td>App Migration</td><td>Students</td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td><td><span class="ch-status ch-status--recommended">Optional / Recommended</span></td></tr>
+        <tr><td>5</td><td>App Migration</td><td>Working Professionals / Developers</td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--not-required">Not Required</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td><td><span class="ch-status ch-status--mandatory">Mandatory</span></td></tr>
       </tbody></table></div>
       <div class="ch-note">Challenge 5 is open to both Students and Working Professionals / Developers. Each participant category is held to its respective track's compliance requirements.</div>
     </section>
 
-    <section class="ch-section"><h2>Recognition &amp; Rewards</h2><ul>
+    <section class="ch-section ch-section--featured"><h2>Recognition &amp; Rewards</h2><ul>
       <li>Participation Certificates for all participants submitting a working project.</li><li>Arm-branded merchandise for the Top 40 finalists.</li><li>Cash awards for winning teams across each of the five problem statements.</li><li>A few of the top winning projects may be featured at national-level industry conferences.</li>
     </ul></section>
 
-<section class="ch-section" id="registration">
+<section class="ch-section ch-section--featured" id="registration">
   <h2>Registration</h2>
 
   <p>

@@ -15,6 +15,19 @@
   --text-muted: #5e5771;
 }
 
+/* Namma sibling theme: values are drawn from existing site blue/cyan palettes. */
+.namma-challenge {
+  --purple-dark: #0366d6;
+  --purple: #0072c5;
+  --purple-light: #e5fcfc;
+  --purple-lighter: #f1f8ff;
+  --purple-accent: #02eaea;
+  --purple-border: rgba(3, 102, 214, 0.18);
+
+  --text-dark: #222222;
+  --text-muted: #666666;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -524,6 +537,243 @@ html {
   margin-left: 0 !important;
 }
 
+/* ============= */
+/* NAMMA BLUE / CYAN THEME */
+/* ============= */
+
+.namma-challenge .challenge-header {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, rgba(2, 234, 234, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at bottom right, rgba(3, 102, 214, 0.3) 0%, transparent 50%),
+              linear-gradient(135deg, #325f74 0%, #0366d6 55%, #0072c5 100%);
+  box-shadow: 0 8px 25px rgba(3, 102, 214, 0.25);
+}
+
+.namma-challenge .challenge-header h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(34, 34, 34, 0.18);
+}
+
+.namma-challenge .challenge-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.namma-challenge .ch-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.namma-challenge .ch-badge-dot {
+  background: var(--purple-accent);
+}
+
+.namma-challenge .ch-section {
+  box-shadow: 0 5px 12px rgba(3, 102, 214, 0.08);
+}
+
+.namma-challenge .ch-section--featured,
+.namma-challenge .phase-one {
+  border-color: rgba(3, 102, 214, 0.24);
+  box-shadow: 0 6px 16px rgba(3, 102, 214, 0.1);
+}
+
+.namma-challenge .ch-section--featured h2::before,
+.namma-challenge .phase-one h2::before {
+  background: var(--purple-dark);
+}
+
+.namma-challenge .ch-accordion[open] {
+  box-shadow: 0 4px 12px rgba(3, 102, 214, 0.15);
+}
+
+.namma-challenge .ch-register-button {
+  border: 3px solid var(--purple-lighter);
+  box-shadow: 0 5px 15px rgba(3, 102, 214, 0.25);
+}
+
+.namma-challenge .ch-register-cta {
+  margin: -44px 0 20px;
+}
+
+.namma-challenge .ch-floating-register {
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(3, 102, 214, 0.3);
+}
+
+.namma-challenge .ch-floating-register:hover {
+  color: #ffffff !important;
+}
+
+/* Invitation-only Phase 2 uses a slightly stronger treatment from the same palette. */
+.namma-challenge .phase-two {
+  border-color: rgba(3, 102, 214, 0.34);
+  box-shadow: 0 7px 18px rgba(3, 102, 214, 0.12);
+}
+
+.namma-challenge .phase-two .phase-deliverable {
+  background: var(--purple-light);
+  border-color: rgba(3, 102, 214, 0.28);
+}
+
+.namma-challenge .phase-two h2::before {
+  background: var(--purple-dark);
+}
+
+/* Problem statement scan hierarchy. */
+.namma-challenge .ch-accordion summary {
+  position: relative;
+  padding-right: 44px;
+}
+
+.namma-challenge .ch-accordion summary::after {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin-left: 0;
+  transform: translateY(-50%);
+}
+
+.namma-challenge .ch-accordion[open] summary::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.namma-challenge .ch-acc-title {
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+.namma-challenge .ch-acc-domain {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border: 1px solid var(--purple-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.namma-challenge .ch-problem-statements .ch-accordion summary {
+  display: grid;
+  grid-template-areas:
+    "domain"
+    "title";
+  row-gap: 4px;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-domain {
+  grid-area: domain;
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--purple);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-title {
+  grid-area: title;
+  color: var(--text-dark);
+  font-size: 16px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-title::first-letter {
+  color: var(--purple-dark);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Timeline emphasis without changing the table structure. */
+.namma-challenge .ch-timeline td:first-child {
+  color: var(--purple-dark);
+  font-weight: 700;
+}
+
+.namma-challenge .ch-timeline td:nth-child(2) {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.namma-challenge .ch-timeline th {
+  background: rgba(229, 252, 252, 0.72);
+}
+
+/* Text-backed status treatments remain understandable without colour. */
+.namma-challenge .ch-status {
+  display: inline-block;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.namma-challenge .ch-status--mandatory {
+  background: rgba(3, 102, 214, 0.12);
+  border-color: rgba(3, 102, 214, 0.28);
+  color: #0366d6;
+}
+
+.namma-challenge .ch-status--recommended {
+  background: #f1f8ff;
+  border-color: rgba(0, 114, 197, 0.22);
+  color: #0072c5;
+}
+
+.namma-challenge .ch-status--not-required {
+  background: #f2f2f2;
+  border-color: rgba(34, 34, 34, 0.15);
+  color: #666666;
+}
+
+/* Marketo presentation overrides are visual only; embed configuration is untouched. */
+.namma-challenge .registration-form-wrapper {
+  background: #ffffff;
+  border-color: rgba(3, 102, 214, 0.24);
+  box-shadow: inset 4px 0 0 rgba(2, 234, 234, 0.48),
+              0 6px 18px rgba(3, 102, 214, 0.06);
+}
+
+.namma-challenge .registration-form-wrapper input[type="text"],
+.namma-challenge .registration-form-wrapper input[type="email"],
+.namma-challenge .registration-form-wrapper input[type="tel"],
+.namma-challenge .registration-form-wrapper select,
+.namma-challenge .registration-form-wrapper textarea {
+  border-color: rgba(3, 102, 214, 0.28) !important;
+}
+
+.namma-challenge .registration-form-wrapper input:focus,
+.namma-challenge .registration-form-wrapper select:focus,
+.namma-challenge .registration-form-wrapper textarea:focus {
+  outline: 2px solid rgba(3, 102, 214, 0.25) !important;
+  border-color: #0366d6 !important;
+}
+
+.namma-challenge .registration-form-wrapper .mktoButton:hover {
+  background: var(--purple) !important;
+}
+
+.namma-challenge .registration-form-wrapper .mktoButton:focus-visible,
+.namma-challenge .ch-register-button:focus-visible {
+  outline: 3px solid rgba(3, 102, 214, 0.35);
+  outline-offset: 3px;
+}
+
 
 
 /* Keep long privacy text readable */
@@ -750,6 +1000,10 @@ html {
   .challenge-header {
     padding: 15px 12px;
     border-radius: 12px;
+  }
+
+  .namma-challenge .ch-register-cta {
+    margin: -38px 0 16px;
   }
 
   .challenge-header h1 {
