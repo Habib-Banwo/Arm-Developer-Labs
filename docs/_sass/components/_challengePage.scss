@@ -15,6 +15,19 @@
   --text-muted: #5e5771;
 }
 
+/* Namma sibling theme: values are drawn from existing site blue/cyan palettes. */
+.namma-challenge {
+  --purple-dark: #0366d6;
+  --purple: #0072c5;
+  --purple-light: #e5fcfc;
+  --purple-lighter: #f1f8ff;
+  --purple-accent: #02eaea;
+  --purple-border: rgba(3, 102, 214, 0.18);
+
+  --text-dark: #222222;
+  --text-muted: #666666;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -524,6 +537,243 @@ html {
   margin-left: 0 !important;
 }
 
+/* ============= */
+/* NAMMA BLUE / CYAN THEME */
+/* ============= */
+
+.namma-challenge .challenge-header {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, rgba(2, 234, 234, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at bottom right, rgba(3, 102, 214, 0.3) 0%, transparent 50%),
+              linear-gradient(135deg, #325f74 0%, #0366d6 55%, #0072c5 100%);
+  box-shadow: 0 8px 25px rgba(3, 102, 214, 0.25);
+}
+
+.namma-challenge .challenge-header h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(34, 34, 34, 0.18);
+}
+
+.namma-challenge .challenge-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.namma-challenge .ch-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.namma-challenge .ch-badge-dot {
+  background: var(--purple-accent);
+}
+
+.namma-challenge .ch-section {
+  box-shadow: 0 5px 12px rgba(3, 102, 214, 0.08);
+}
+
+.namma-challenge .ch-section--featured,
+.namma-challenge .phase-one {
+  border-color: rgba(3, 102, 214, 0.24);
+  box-shadow: 0 6px 16px rgba(3, 102, 214, 0.1);
+}
+
+.namma-challenge .ch-section--featured h2::before,
+.namma-challenge .phase-one h2::before {
+  background: var(--purple-dark);
+}
+
+.namma-challenge .ch-accordion[open] {
+  box-shadow: 0 4px 12px rgba(3, 102, 214, 0.15);
+}
+
+.namma-challenge .ch-register-button {
+  border: 3px solid var(--purple-lighter);
+  box-shadow: 0 5px 15px rgba(3, 102, 214, 0.25);
+}
+
+.namma-challenge .ch-register-cta {
+  margin: -44px 0 20px;
+}
+
+.namma-challenge .ch-floating-register {
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(3, 102, 214, 0.3);
+}
+
+.namma-challenge .ch-floating-register:hover {
+  color: #ffffff !important;
+}
+
+/* Invitation-only Phase 2 uses a slightly stronger treatment from the same palette. */
+.namma-challenge .phase-two {
+  border-color: rgba(3, 102, 214, 0.34);
+  box-shadow: 0 7px 18px rgba(3, 102, 214, 0.12);
+}
+
+.namma-challenge .phase-two .phase-deliverable {
+  background: var(--purple-light);
+  border-color: rgba(3, 102, 214, 0.28);
+}
+
+.namma-challenge .phase-two h2::before {
+  background: var(--purple-dark);
+}
+
+/* Problem statement scan hierarchy. */
+.namma-challenge .ch-accordion summary {
+  position: relative;
+  padding-right: 44px;
+}
+
+.namma-challenge .ch-accordion summary::after {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin-left: 0;
+  transform: translateY(-50%);
+}
+
+.namma-challenge .ch-accordion[open] summary::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.namma-challenge .ch-acc-title {
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+.namma-challenge .ch-acc-domain {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border: 1px solid var(--purple-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.namma-challenge .ch-problem-statements .ch-accordion summary {
+  display: grid;
+  grid-template-areas:
+    "domain"
+    "title";
+  row-gap: 4px;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-domain {
+  grid-area: domain;
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--purple);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-title {
+  grid-area: title;
+  color: var(--text-dark);
+  font-size: 16px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.namma-challenge .ch-problem-statements .ch-acc-title::first-letter {
+  color: var(--purple-dark);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Timeline emphasis without changing the table structure. */
+.namma-challenge .ch-timeline td:first-child {
+  color: var(--purple-dark);
+  font-weight: 700;
+}
+
+.namma-challenge .ch-timeline td:nth-child(2) {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.namma-challenge .ch-timeline th {
+  background: rgba(229, 252, 252, 0.72);
+}
+
+/* Text-backed status treatments remain understandable without colour. */
+.namma-challenge .ch-status {
+  display: inline-block;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.namma-challenge .ch-status--mandatory {
+  background: rgba(3, 102, 214, 0.12);
+  border-color: rgba(3, 102, 214, 0.28);
+  color: #0366d6;
+}
+
+.namma-challenge .ch-status--recommended {
+  background: #f1f8ff;
+  border-color: rgba(0, 114, 197, 0.22);
+  color: #0072c5;
+}
+
+.namma-challenge .ch-status--not-required {
+  background: #f2f2f2;
+  border-color: rgba(34, 34, 34, 0.15);
+  color: #666666;
+}
+
+/* Marketo presentation overrides are visual only; embed configuration is untouched. */
+.namma-challenge .registration-form-wrapper {
+  background: #ffffff;
+  border-color: rgba(3, 102, 214, 0.24);
+  box-shadow: inset 4px 0 0 rgba(2, 234, 234, 0.48),
+              0 6px 18px rgba(3, 102, 214, 0.06);
+}
+
+.namma-challenge .registration-form-wrapper input[type="text"],
+.namma-challenge .registration-form-wrapper input[type="email"],
+.namma-challenge .registration-form-wrapper input[type="tel"],
+.namma-challenge .registration-form-wrapper select,
+.namma-challenge .registration-form-wrapper textarea {
+  border-color: rgba(3, 102, 214, 0.28) !important;
+}
+
+.namma-challenge .registration-form-wrapper input:focus,
+.namma-challenge .registration-form-wrapper select:focus,
+.namma-challenge .registration-form-wrapper textarea:focus {
+  outline: 2px solid rgba(3, 102, 214, 0.25) !important;
+  border-color: #0366d6 !important;
+}
+
+.namma-challenge .registration-form-wrapper .mktoButton:hover {
+  background: var(--purple) !important;
+}
+
+.namma-challenge .registration-form-wrapper .mktoButton:focus-visible,
+.namma-challenge .ch-register-button:focus-visible {
+  outline: 3px solid rgba(3, 102, 214, 0.35);
+  outline-offset: 3px;
+}
+
 
 
 /* Keep long privacy text readable */
@@ -752,6 +1002,10 @@ html {
     border-radius: 12px;
   }
 
+  .namma-challenge .ch-register-cta {
+    margin: -38px 0 16px;
+  }
+
   .challenge-header h1 {
     font-size: 20px;
   }
@@ -836,6 +1090,613 @@ html {
   }
 
   .ch-note {
+    font-size: 14px;
+  }
+}
+
+/* ============= */
+/* BHARAT 2026 CHARCOAL / COPPER THEME */
+/* ============= */
+
+.bharat-2026-challenge {
+  --purple-dark: #8a461f;
+  --purple: #b66526;
+  --purple-light: #f1dfca;
+  --purple-lighter: #f8f4ed;
+  --purple-accent: #d99a3d;
+  --purple-border: #d8cabb;
+
+  --text-dark: #292722;
+  --text-muted: #696158;
+
+  background: #f7f3ec;
+  color: var(--text-dark);
+}
+
+.bharat-2026-challenge .challenge-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(217, 154, 61, 0.22), transparent 28%),
+    radial-gradient(circle at 12% 100%, rgba(182, 101, 38, 0.2), transparent 38%),
+    linear-gradient(135deg, #181916 0%, #292823 58%, #20201d 100%);
+  border: 1px solid rgba(217, 154, 61, 0.28);
+  box-shadow: 0 12px 28px rgba(32, 32, 29, 0.22);
+}
+
+.bharat-2026-challenge .challenge-header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(239, 191, 117, 0.18) 1px, transparent 1.5px),
+    linear-gradient(rgba(239, 191, 117, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 191, 117, 0.055) 1px, transparent 1px);
+  background-position: 0 0, 0 0, 0 0;
+  background-size: 64px 64px, 32px 32px, 32px 32px;
+  mask-image: linear-gradient(90deg, transparent 4%, #000 45%, #000 100%);
+  pointer-events: none;
+}
+
+.bharat-2026-challenge .ch-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bharat-2026-challenge .challenge-header h1 {
+  max-width: 820px;
+  margin: 14px 0 8px;
+  color: #fffdf8;
+  font-size: clamp(2rem, 4.5vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+.bharat-2026-challenge .ch-badge {
+  border: 1px solid rgba(239, 191, 117, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  color: #f8f1e7;
+}
+
+.bharat-2026-challenge .ch-badge-dot {
+  background: var(--purple-accent);
+  box-shadow: 0 0 0 3px rgba(217, 154, 61, 0.13);
+}
+
+.bharat-2026-challenge .bharat-edition-label {
+  display: inline-block;
+  margin: 4px 0 10px;
+  padding: 4px 10px;
+  border: 1px solid rgba(239, 191, 117, 0.5);
+  border-radius: 4px;
+  color: #efbf75;
+  font-size: 13px;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.bharat-2026-challenge .ch-tagline {
+  margin: 0;
+  color: #f4d39f;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.bharat-2026-challenge .ch-header-meta {
+  gap: 10px;
+}
+
+.bharat-2026-challenge .ch-meta-pill {
+  border: 1px solid rgba(239, 191, 117, 0.2);
+  background: rgba(255, 255, 255, 0.075);
+  color: #fffdf8;
+  backdrop-filter: blur(2px);
+}
+
+.bharat-2026-challenge .ch-meta-label {
+  color: #d1c7b9;
+  opacity: 1;
+}
+
+.bharat-2026-challenge .ch-meta-value {
+  color: #fffdf8;
+}
+
+.bharat-2026-challenge .ch-section {
+  border-color: var(--purple-border);
+  background: #fffdfa;
+  box-shadow: 0 5px 14px rgba(64, 53, 42, 0.075);
+}
+
+.bharat-2026-challenge .ch-section--featured {
+  border-color: rgba(154, 79, 32, 0.34);
+  box-shadow: inset 3px 0 0 rgba(182, 101, 38, 0.7),
+              0 7px 18px rgba(64, 53, 42, 0.09);
+}
+
+.bharat-2026-challenge .ch-section h2 {
+  color: #75401f;
+}
+
+.bharat-2026-challenge .ch-section h2::before {
+  background: linear-gradient(180deg, var(--purple-accent), var(--purple));
+}
+
+.bharat-2026-challenge .ch-section h3,
+.bharat-2026-challenge .ch-section strong {
+  color: #63391f;
+}
+
+.bharat-2026-challenge .ch-section p,
+.bharat-2026-challenge .ch-section li {
+  color: var(--text-dark);
+}
+
+.bharat-2026-challenge .phase-deliverable {
+  border-color: var(--purple-border);
+  background: #fbf7f1;
+}
+
+.bharat-2026-challenge .phase-deliverable-title {
+  color: #63391f;
+}
+
+.bharat-2026-challenge .phase-deliverable-text {
+  color: var(--text-muted);
+}
+
+.bharat-2026-challenge .bharat-whats-new .phase-deliverables,
+.bharat-2026-challenge .bharat-pipeline .phase-deliverables {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.bharat-2026-challenge .bharat-whats-new .phase-deliverable {
+  border-top: 3px solid rgba(182, 101, 38, 0.65);
+}
+
+.bharat-2026-challenge .bharat-pipeline {
+  margin-top: 32px;
+  border-color: rgba(154, 79, 32, 0.42);
+  box-shadow: inset 0 3px 0 rgba(217, 154, 61, 0.55),
+              0 8px 20px rgba(64, 53, 42, 0.1);
+}
+
+.bharat-2026-challenge .bharat-pipeline .phase-deliverables {
+  gap: 20px;
+  counter-reset: bharat-phase;
+}
+
+.bharat-2026-challenge .bharat-phase {
+  position: relative;
+  min-width: 0;
+  padding-top: 54px;
+  border-top: 4px solid #b66526;
+  counter-increment: bharat-phase;
+}
+
+.bharat-2026-challenge .bharat-phase::before {
+  content: "0" counter(bharat-phase);
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(138, 70, 31, 0.32);
+  border-radius: 50%;
+  background: #fffdfa;
+  color: #75401f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bharat-2026-challenge .bharat-phase:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -17px;
+  width: 14px;
+  color: #a75824;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.bharat-2026-challenge .bharat-phase--2 {
+  border-top-color: #c47a2e;
+  background: #faf3e8;
+}
+
+.bharat-2026-challenge .bharat-phase--3 {
+  border-color: rgba(154, 79, 32, 0.48);
+  border-top-color: #d99a3d;
+  background: #f8eddd;
+  box-shadow: 0 6px 16px rgba(138, 70, 31, 0.11);
+}
+
+.bharat-2026-challenge .ch-accordion {
+  border-color: #d3c3b2;
+  background: #f7efe4;
+}
+
+.bharat-2026-challenge .ch-accordion[open] {
+  background: #fffdfa;
+  box-shadow: 0 5px 14px rgba(92, 63, 41, 0.12);
+}
+
+.bharat-2026-challenge .ch-accordion summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-areas:
+    "number domain"
+    "number title";
+  gap: 4px 12px;
+  min-height: 68px;
+  padding: 14px 48px 14px 14px;
+  align-items: center;
+}
+
+.bharat-2026-challenge .ch-accordion summary::after {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin: 0;
+  color: #75401f;
+  font-size: 15px;
+  opacity: 0.85;
+  transform: translateY(-50%);
+}
+
+.bharat-2026-challenge .ch-accordion[open] summary::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.bharat-2026-challenge .ch-accordion summary:focus-visible {
+  outline: 3px solid rgba(182, 101, 38, 0.38);
+  outline-offset: -3px;
+  border-radius: 9px;
+}
+
+.bharat-2026-challenge .ch-acc-title {
+  display: contents;
+}
+
+.bharat-2026-challenge .bharat-ps-number {
+  grid-area: number;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(138, 70, 31, 0.38);
+  border-radius: 7px;
+  background: #292823;
+  color: #efbf75;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.bharat-2026-challenge .bharat-ps-separator {
+  display: none;
+}
+
+.bharat-2026-challenge .bharat-ps-title {
+  grid-area: title;
+  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.bharat-2026-challenge .ch-acc-domain {
+  grid-area: domain;
+  color: #8a461f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.bharat-2026-challenge .ch-acc-body {
+  padding: 16px 18px 20px;
+  border-top-color: #d8cabb;
+  background: #fffdfa;
+}
+
+.bharat-2026-challenge .ch-acc-body h3 {
+  color: #75401f;
+}
+
+.bharat-2026-challenge .bharat-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.bharat-2026-challenge .ch-table th {
+  padding: 12px 14px;
+  border-bottom-color: #c9ad91;
+  background: #ead7c0;
+  color: #51321f;
+}
+
+.bharat-2026-challenge .ch-table td {
+  padding: 12px 14px;
+  border-bottom-color: #e4dcd2;
+}
+
+.bharat-2026-challenge .ch-table tr:nth-child(even) {
+  background: #faf5ee;
+}
+
+.bharat-2026-challenge .ch-timeline {
+  min-width: 720px;
+}
+
+.bharat-2026-challenge .ch-timeline td:first-child {
+  color: #6f3b1d;
+  font-weight: 750;
+}
+
+.bharat-2026-challenge .ch-timeline td:nth-child(2) {
+  color: #8a461f;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bharat-2026-challenge .bharat-timeline > p:first-of-type {
+  color: var(--text-muted);
+}
+
+.bharat-2026-challenge .bharat-prizes {
+  margin-top: 32px;
+  border-color: rgba(154, 79, 32, 0.5);
+  box-shadow: inset 4px 0 0 #b66526,
+              0 9px 22px rgba(78, 55, 37, 0.12);
+}
+
+.bharat-2026-challenge .bharat-prize-table td:first-child {
+  color: #6f3b1d;
+  font-weight: 750;
+}
+
+.bharat-2026-challenge .bharat-prize-table td:last-child {
+  color: #75401f;
+  font-size: 17px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.bharat-2026-challenge .bharat-prize-table tbody tr:last-child td {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.bharat-2026-challenge .bharat-grant-heading {
+  margin: 22px 0 0;
+  padding: 13px 16px 8px;
+  border: 1px solid #393732;
+  border-bottom: 0;
+  border-radius: 9px 9px 0 0;
+  background: #292823;
+  color: #f4d39f !important;
+}
+
+.bharat-2026-challenge .bharat-grant-summary {
+  margin-top: 0;
+  padding: 10px 16px 14px;
+  border: 1px solid #c9ad91;
+  border-top: 0;
+  border-radius: 0 0 9px 9px;
+  background: #f5e7d5;
+}
+
+.bharat-2026-challenge .bharat-grant-summary strong {
+  color: #6f3b1d;
+  font-size: 1.08em;
+}
+
+.bharat-2026-challenge .bharat-partners-table td:first-child {
+  color: #8a461f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.bharat-2026-challenge .bharat-partners-table td:nth-child(2) {
+  color: #3d342c;
+  font-weight: 700;
+}
+
+.bharat-2026-challenge .bharat-tentative {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: rgba(105, 97, 88, 0.55);
+  text-underline-offset: 3px;
+}
+
+.bharat-2026-challenge .bharat-registration .ch-note {
+  border-left-color: #d99a3d;
+  background: #292823;
+  color: #fffaf2;
+  box-shadow: inset 0 0 0 1px rgba(239, 191, 117, 0.18);
+}
+
+.bharat-2026-challenge .ch-register-button {
+  border: 2px solid #292823;
+  background: #d99a3d;
+  color: #211f1b !important;
+  box-shadow: 0 5px 15px rgba(92, 63, 41, 0.24);
+}
+
+.bharat-2026-challenge .ch-register-button:hover {
+  background: #efbf75;
+  color: #211f1b !important;
+}
+
+.bharat-2026-challenge .ch-register-button:focus-visible {
+  outline: 3px solid rgba(182, 101, 38, 0.42);
+  outline-offset: 3px;
+}
+
+@media (max-width: 820px) {
+  .bharat-2026-challenge .bharat-whats-new .phase-deliverables,
+  .bharat-2026-challenge .bharat-pipeline .phase-deliverables {
+    grid-template-columns: 1fr;
+  }
+
+  .bharat-2026-challenge .bharat-phase:not(:last-child)::after {
+    display: none;
+  }
+
+  .bharat-2026-challenge .ch-badge {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .bharat-2026-challenge .ch-header-meta {
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: flex-start;
+  }
+
+  .bharat-2026-challenge .ch-header-meta .ch-meta-pill {
+    flex: 1 1 240px;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 5px !important;
+    min-width: 0 !important;
+    padding: 6px 12px !important;
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .bharat-2026-challenge .challenge-header {
+    padding: 24px 18px;
+  }
+
+  .bharat-2026-challenge .challenge-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .bharat-2026-challenge .ch-header-meta .ch-meta-pill {
+    flex-basis: 100%;
+  }
+
+  .bharat-2026-challenge .ch-accordion summary {
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 62px;
+    padding: 12px 40px 12px 12px;
+    column-gap: 10px;
+  }
+
+  .bharat-2026-challenge .bharat-ps-number {
+    width: 38px;
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .bharat-2026-challenge .bharat-ps-title {
+    font-size: 15px;
+  }
+
+  .bharat-2026-challenge .ch-acc-body {
+    padding: 14px 14px 18px;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table,
+  .bharat-2026-challenge .bharat-prize-table tbody,
+  .bharat-2026-challenge .bharat-prize-table tr,
+  .bharat-2026-challenge .bharat-prize-table td,
+  .bharat-2026-challenge .bharat-partners-table,
+  .bharat-2026-challenge .bharat-partners-table tbody,
+  .bharat-2026-challenge .bharat-partners-table tr,
+  .bharat-2026-challenge .bharat-partners-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table thead,
+  .bharat-2026-challenge .bharat-partners-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table tr,
+  .bharat-2026-challenge .bharat-partners-table tr {
+    margin: 10px 0;
+    padding: 8px 10px;
+    border: 1px solid var(--purple-border);
+    border-radius: 9px;
+    background: #fbf7f1 !important;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table td,
+  .bharat-2026-challenge .bharat-partners-table td {
+    display: grid;
+    grid-template-columns: minmax(88px, 0.36fr) minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 4px;
+    border: 0;
+    white-space: normal;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table td::before,
+  .bharat-2026-challenge .bharat-partners-table td::before {
+    content: attr(data-label);
+    color: #8a461f;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .bharat-2026-challenge .bharat-prize-table td:last-child {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bharat-2026-challenge .challenge-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .bharat-2026-challenge .ch-tagline {
+    font-size: 16px;
+  }
+
+  .bharat-2026-challenge .ch-meta-pill {
+    flex-wrap: wrap;
+  }
+
+  .bharat-2026-challenge .bharat-ps-title {
     font-size: 14px;
   }
 }
