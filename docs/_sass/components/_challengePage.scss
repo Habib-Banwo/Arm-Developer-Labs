@@ -309,7 +309,7 @@ html {
 .ch-accordion summary::after {
   content: "▾";
   margin-left: auto;
-  font-size: 12px;
+  font-size: 30px;
   opacity: 0.6;
   transition: transform 0.2s ease;
 }
@@ -570,6 +570,76 @@ html {
   z-index: 1;
 }
 
+.namma-challenge .ch-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.namma-challenge .ch-hero-copy {
+  min-width: 0;
+}
+
+.namma-challenge .ch-logo-row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.namma-challenge .ch-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  height: auto;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+
+  overflow: visible;
+}
+
+.namma-challenge .ch-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+
+  max-height: 74px;
+
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.namma-challenge .ch-logo--wide img {
+  max-width: 330px;
+}
+
+
+
+.namma-challenge .ch-logo--iiitb img {
+  max-height: 150px;
+}
+
+@media (max-width: 1040px) {
+  .namma-challenge .ch-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
+    gap: 18px;
+  }
+
+  .namma-challenge .ch-logo-row {
+    justify-content: center;
+    max-width: 360px;
+    margin-left: auto;
+  }
+}
+
 .namma-challenge .ch-badge-dot {
   background: var(--purple-accent);
 }
@@ -695,7 +765,65 @@ html {
   font-weight: 800;
 }
 
+.namma-challenge .ch-problem-statements .ch-acc-body > h3 {
+  margin: 20px 0 8px;
+  color: var(--purple-dark);
+  font-size: 16px;
+}
+
+.namma-challenge .ch-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--purple-border);
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.namma-challenge .ch-table-scroll:focus-visible {
+  outline: 3px solid rgba(3, 102, 214, 0.28);
+  outline-offset: 2px;
+}
+
+.namma-challenge .ch-table-scroll .ch-table {
+  margin-top: 0;
+}
+
+.namma-challenge .ch-ps-table {
+  min-width: 760px;
+}
+
+.namma-challenge .ch-ps-checklist {
+  min-width: 980px;
+}
+
+.namma-challenge .ch-ps-table th,
+.namma-challenge .ch-ps-table td {
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(1),
+.namma-challenge .ch-ps-evaluation td:nth-child(1) {
+  width: 30%;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(2),
+.namma-challenge .ch-ps-evaluation td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.namma-challenge .ch-ps-evaluation th:nth-child(3),
+.namma-challenge .ch-ps-evaluation td:nth-child(3) {
+  width: 60%;
+}
+
 /* Timeline emphasis without changing the table structure. */
+.namma-challenge .ch-timeline {
+  min-width: 700px;
+}
+
 .namma-challenge .ch-timeline td:first-child {
   color: var(--purple-dark);
   font-weight: 700;
@@ -821,6 +949,30 @@ html {
   .challenge-header h1 {
     font-size: 24px;
     margin: 8px 0;
+  }
+
+  .namma-challenge .ch-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .namma-challenge .ch-hero-layout > .ch-logo-row {
+    flex-direction: row !important;
+    justify-content: center;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .namma-challenge .ch-logo {
+    height: 68px;
+  }
+
+  .namma-challenge .ch-hero-layout .ch-logo-row .ch-logo img {
+    width: auto !important;
+    height: auto !important;
+    max-height: 52px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
   }
 
   .ch-tagline {
@@ -1008,6 +1160,22 @@ html {
 
   .challenge-header h1 {
     font-size: 20px;
+  }
+
+  .namma-challenge .ch-hero-layout > .ch-logo-row {
+    flex-direction: row !important;
+  }
+
+  .namma-challenge .ch-logo {
+    max-width: 100%;
+  }
+
+  .namma-challenge .ch-hero-layout .ch-logo-row .ch-logo img {
+    max-height: 48px !important;
+  }
+
+  .namma-challenge .ch-logo--wide img {
+    max-width: min(252px, calc(100vw - 74px));
   }
 
   .ch-tagline {
