@@ -1543,6 +1543,23 @@ html {
   border-radius: 9px;
 }
 
+.bharat-2026-challenge .bharat-faq .ch-accordion summary {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+  padding: 14px 48px 14px 16px;
+}
+
+.bharat-2026-challenge .bharat-faq .ch-acc-title {
+  display: block;
+  min-width: 0;
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .bharat-2026-challenge .ch-acc-title {
   display: contents;
 }
