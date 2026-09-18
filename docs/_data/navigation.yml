@@ -2,6 +2,9 @@ header:
 - titles:
     en: Projects
   url: /2025/05/30/projects.html
+- titles:
+    en: Bharat AI-SoC Challenge
+  url: /Bharat_AI_SoC_2026_27.html
 projects:
 - title: Projects
   children:
