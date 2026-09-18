@@ -1313,6 +1313,88 @@ html {
   z-index: 1;
 }
 
+.bharat-2026-challenge .bharat-supported-label {
+  margin: 0 0 6px;
+  color: #f4d39f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.bharat-2026-challenge .bharat-secondary-row {
+  display: block;
+  margin-top: 4px;
+}
+
+.bharat-2026-challenge .bharat-edition-theme {
+  padding: 0;
+  border: 0;
+}
+
+.bharat-2026-challenge .bharat-hero-partners {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: min(100%, 780px);
+  min-width: 0;
+  margin: 18px auto;
+  gap: clamp(18px, 3vw, 36px);
+}
+
+.bharat-2026-challenge .bharat-hero-logo {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--supported {
+  flex-direction: column;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--iit-delhi .bharat-hero-logo-surface,
+.bharat-2026-challenge .bharat-hero-logo--supported .bharat-hero-logo-surface {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  border-radius: 0;
+  background: #fff;
+}
+
+.bharat-2026-challenge .bharat-hero-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--arm img {
+  max-height: 62px;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--c2s img {
+  max-height: 54px;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--iit-delhi img {
+  max-height: 62px;
+}
+
+.bharat-2026-challenge .bharat-hero-logo--supported img {
+  max-height: 58px;
+}
+
 .bharat-2026-challenge .challenge-header h1 {
   max-width: 820px;
   margin: 14px 0 8px;
@@ -1674,12 +1756,6 @@ html {
   white-space: nowrap;
 }
 
-.bharat-2026-challenge .bharat-prize-table tbody tr:last-child td {
-  color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 500;
-}
-
 .bharat-2026-challenge .bharat-grant-heading {
   margin: 22px 0 0;
   padding: 13px 16px 8px;
@@ -1715,6 +1791,17 @@ html {
 .bharat-2026-challenge .bharat-partners-table td:nth-child(2) {
   color: #3d342c;
   font-weight: 700;
+}
+
+.bharat-2026-challenge .bharat-video-player {
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  margin: 18px auto 4px;
+  border: 1px solid rgba(217, 154, 61, 0.55);
+  border-radius: 12px;
+  background: #1c1d1a;
 }
 
 .bharat-2026-challenge .bharat-tentative {
@@ -1812,6 +1899,13 @@ html {
 }
 
 @media (max-width: 820px) {
+  .bharat-2026-challenge .bharat-hero-partners {
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 14px !important;
+    padding: 0 !important;
+  }
+
   .bharat-2026-challenge .bharat-whats-new .phase-deliverables,
   .bharat-2026-challenge .bharat-pipeline .phase-deliverables {
     grid-template-columns: 1fr;
@@ -1844,6 +1938,22 @@ html {
 }
 
 @media (max-width: 640px) {
+  .bharat-2026-challenge .bharat-hero-partners {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end !important;
+    width: 100%;
+    gap: 20px 16px !important;
+  }
+
+  .bharat-2026-challenge .bharat-hero-logo {
+    width: 100%;
+  }
+
+  .bharat-2026-challenge .bharat-hero-logo img {
+    max-width: min(100%, 160px);
+  }
+
   .bharat-2026-challenge .challenge-header {
     padding: 24px 18px;
   }
@@ -1935,6 +2045,29 @@ html {
 }
 
 @media (max-width: 480px) {
+  .bharat-2026-challenge .bharat-hero-partners {
+    gap: 10px !important;
+  }
+
+  .bharat-2026-challenge .ch-header-content .bharat-hero-partners .bharat-hero-logo img {
+    width: auto !important;
+    height: auto !important;
+    max-width: min(100%, 140px) !important;
+  }
+
+  .bharat-2026-challenge .ch-header-content .bharat-hero-logo--arm img,
+  .bharat-2026-challenge .ch-header-content .bharat-hero-logo--iit-delhi img {
+    max-height: 54px !important;
+  }
+
+  .bharat-2026-challenge .ch-header-content .bharat-hero-logo--c2s img {
+    max-height: 46px !important;
+  }
+
+  .bharat-2026-challenge .ch-header-content .bharat-hero-logo--supported img {
+    max-height: 50px !important;
+  }
+
   .bharat-2026-challenge .challenge-header h1 {
     font-size: 1.55rem;
   }
